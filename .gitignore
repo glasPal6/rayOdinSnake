@@ -1,0 +1,28 @@
+# Build output
+/build/
+/bin/
+*.exe
+*.app
+
+# Odin intermediates
+*.ll
+*.bc
+*.o
+*.obj
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Bins
+/angle/
+/raylib/
