@@ -1,7 +1,7 @@
 package main
 
-import "core:math/rand"
 import rl "../raylib"
+import "core:math/rand"
 
 reset_game :: proc() {
 	snake = Snake {

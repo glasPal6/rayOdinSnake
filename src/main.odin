@@ -26,8 +26,8 @@ main :: proc() {
 			input_to_snake()
 
 			tick_timer += rl.GetFrameTime()
-			if tick_timer >= 0.1 {
-				tick_timer -= 0.1
+			if tick_timer >= SNAKE_MOVEMENT_TIME {
+				tick_timer -= SNAKE_MOVEMENT_TIME
 
 				if snake_state == .Apple {
 					can_place_apple := place_apple()

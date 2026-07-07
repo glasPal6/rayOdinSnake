@@ -34,8 +34,8 @@ Snake_State :: enum {
 
 // Package-level game state
 gameState := Game_State.Start_Page
-board     := [GRID][GRID]Tile{}
-snake     := Snake {
+board := [GRID][GRID]Tile{}
+snake := Snake {
 	score = 0,
 	head = Position{x = GRID / 2, y = GRID / 2},
 	tail = Position{x = GRID / 2 + 1, y = GRID / 2},

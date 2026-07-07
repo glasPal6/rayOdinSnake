@@ -1,7 +1,7 @@
 package main
 
-import "core:fmt"
 import rl "../raylib"
+import "core:fmt"
 
 draw_start_page :: proc() {
 	title: cstring = "ODIN SNAKE"
