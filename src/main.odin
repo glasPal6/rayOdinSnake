@@ -1,6 +1,7 @@
 package main
 
 import rl "../raylib"
+// import rl "vendor:raylib"
 
 main :: proc() {
 	rl.InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Raylib Odin Snake")

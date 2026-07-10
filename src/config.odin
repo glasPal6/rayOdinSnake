@@ -1,6 +1,7 @@
 package main
 
 import rl "../raylib"
+// import rl "vendor:raylib"
 
 DEBUG :: true
 
@@ -16,9 +17,9 @@ when TILE_WIDTH <= BUFFER || TILE_HEIGHT <= BUFFER {
 	#panic("GRID too large: tile dimensions must be bigger than BUFFER")
 }
 
-SNAKE_UP :: rl.KeyboardKey.W
-SNAKE_DOWN :: rl.KeyboardKey.S
-SNAKE_LEFT :: rl.KeyboardKey.A
-SNAKE_RIGHT :: rl.KeyboardKey.D
+SNAKE_UP :: [?]rl.KeyboardKey{rl.KeyboardKey.W, rl.KeyboardKey.UP}
+SNAKE_DOWN :: [?]rl.KeyboardKey{rl.KeyboardKey.S, rl.KeyboardKey.DOWN}
+SNAKE_LEFT :: [?]rl.KeyboardKey{rl.KeyboardKey.A, rl.KeyboardKey.LEFT}
+SNAKE_RIGHT :: [?]rl.KeyboardKey{rl.KeyboardKey.D, rl.KeyboardKey.RIGHT}
 
 SNAKE_MOVEMENT_TIME :: 0.1

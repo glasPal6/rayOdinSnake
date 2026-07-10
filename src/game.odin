@@ -2,6 +2,7 @@ package main
 
 import rl "../raylib"
 import "core:math/rand"
+// import rl "vendor:raylib"
 
 reset_game :: proc() {
 	snake = Snake {
@@ -15,18 +16,22 @@ reset_game :: proc() {
 	snake_state = .Apple
 }
 
+set_if_key_pressed :: proc(current: Tile, keys: [$N]rl.KeyboardKey, dir, opposite: Tile) -> bool {
+	for key in keys {
+		if rl.IsKeyPressed(key) {
+			if current != opposite {board[snake.head.x][snake.head.y] = dir}
+			return true
+		}
+	}
+	return false
+}
+
 input_to_snake :: proc() {
 	current := board[snake.head.x][snake.head.y]
-	#partial switch rl.GetKeyPressed() {
-	case SNAKE_UP:
-		if current != .Down {board[snake.head.x][snake.head.y] = .Up}
-	case SNAKE_DOWN:
-		if current != .Up {board[snake.head.x][snake.head.y] = .Down}
-	case SNAKE_LEFT:
-		if current != .Right {board[snake.head.x][snake.head.y] = .Left}
-	case SNAKE_RIGHT:
-		if current != .Left {board[snake.head.x][snake.head.y] = .Right}
-	}
+	if set_if_key_pressed(current, SNAKE_UP, .Up, .Down) {return}
+	if set_if_key_pressed(current, SNAKE_DOWN, .Down, .Up) {return}
+	if set_if_key_pressed(current, SNAKE_LEFT, .Left, .Right) {return}
+	if set_if_key_pressed(current, SNAKE_RIGHT, .Right, .Left) {return}
 }
 
 has_collided :: proc() -> Snake_State {

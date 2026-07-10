@@ -2,6 +2,7 @@ package main
 
 import rl "../raylib"
 import "core:fmt"
+// import rl "vendor:raylib"
 
 draw_start_page :: proc() {
 	title: cstring = "ODIN SNAKE"
@@ -14,7 +15,7 @@ draw_start_page :: proc() {
 	sub_width := rl.MeasureText(subtitle, sub_size)
 	rl.DrawText(subtitle, (WINDOW_WIDTH - sub_width) / 2, 340, sub_size, rl.RAYWHITE)
 
-	controls: cstring = "WASD to move      ESC to quit"
+	controls: cstring = "WASD or Arrow Keys to move      ESC to quit"
 	ctrl_size :: 20
 	ctrl_width := rl.MeasureText(controls, ctrl_size)
 	rl.DrawText(controls, (WINDOW_WIDTH - ctrl_width) / 2, 420, ctrl_size, rl.GRAY)
